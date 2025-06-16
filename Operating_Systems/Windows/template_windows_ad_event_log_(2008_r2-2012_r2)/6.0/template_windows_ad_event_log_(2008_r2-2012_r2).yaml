@@ -27,12 +27,7 @@ zabbix_export:
         + changed domain policy and cleaned security log
         
         
-        
-        ## Author
-        
-        Andrew Herasym
-        
-        
+                
       groups:
         -
           name: 'Windows Event Log'
@@ -45,7 +40,7 @@ zabbix_export:
           delay: '300'
           trends: '0'
           value_type: LOG
-          description: 'Очищений журнал безпеки'
+          description: 'Очистка журнала безопасности'
           tags:
             -
               tag: Application
@@ -56,7 +51,7 @@ zabbix_export:
               expression: 'logeventid(/Event User Log/eventlog[Security,,,,1102,,],,"4722")=1 and nodata(/Event User Log/eventlog[Security,,,,1102,,],5s)=0'
               name: 'Cleaned Security Log'
               priority: HIGH
-              description: 'Очищений журнал безпеки'
+              description: 'Очистка журнала безопасности'
         -
           uuid: d11c5a759a8f40c3a9f84c82e0f1a3e7
           name: 'Create User'
@@ -66,7 +61,7 @@ zabbix_export:
           history: 45d
           trends: '0'
           value_type: LOG
-          description: 'Обліковий запис користувача створено'
+          description: 'Создана учетная запись пользователя'
           tags:
             -
               tag: Application
@@ -77,7 +72,7 @@ zabbix_export:
               expression: 'logeventid(/Event User Log/eventlog[Security,,,,4720,,],,"4720")=1 and nodata(/Event User Log/eventlog[Security,,,,4720,,],5s)=0'
               name: 'Create User'
               priority: INFO
-              description: 'Обліковий запис користувача створено'
+              description: 'Создана учетная запись пользователя'
         -
           uuid: e489bb8be4564867b5b37fb9c23be01b
           name: 'User On'
@@ -87,7 +82,7 @@ zabbix_export:
           history: 45d
           trends: '0'
           value_type: LOG
-          description: 'Обліковий запис користувача включено'
+          description: 'Учетная запись пользователя была включена'
           tags:
             -
               tag: Application
@@ -98,7 +93,7 @@ zabbix_export:
               expression: 'logeventid(/Event User Log/eventlog[Security,,,,4722,,],,"4722")=1 and nodata(/Event User Log/eventlog[Security,,,,4722,,],5s)=0'
               name: 'User On'
               priority: INFO
-              description: 'Обліковий запис користувача включено'
+              description: 'Учетная запись пользователя была включена'
         -
           uuid: 2c475fbaa3eb405caecd37304012e7e9
           name: 'User Password Reset'
@@ -108,7 +103,7 @@ zabbix_export:
           history: 45d
           trends: '0'
           value_type: LOG
-          description: 'Пароль користувача скинуто'
+          description: 'Сброса пароля учетной записи'
           tags:
             -
               tag: Application
@@ -119,7 +114,7 @@ zabbix_export:
               expression: 'logeventid(/Event User Log/eventlog[Security,,,,4724,,],,"4722")=1 and nodata(/Event User Log/eventlog[Security,,,,4724,,],5s)=0'
               name: 'User Password Reset'
               priority: INFO
-              description: 'Пароль користувача скинуто'
+              description: 'Сброса пароля учетной записи'
         -
           uuid: 0c63c188e34546808302fe60c74a22cc
           name: 'User Off'
@@ -129,7 +124,7 @@ zabbix_export:
           history: 45d
           trends: '0'
           value_type: LOG
-          description: 'Обліковий запис користувача виключено'
+          description: 'Учетная запись пользователя отключена'
           tags:
             -
               tag: Application
@@ -140,7 +135,7 @@ zabbix_export:
               expression: 'logeventid(/Event User Log/eventlog[Security,,,,4725,,],,"4725")=1 and nodata(/Event User Log/eventlog[Security,,,,4725,,],5s)=0'
               name: 'User Off'
               priority: INFO
-              description: 'Обліковий запис користувача відключено'
+              description: 'Учетная запись пользователя отключена'
         -
           uuid: 1d32950237924719b53fbfff947021ff
           name: 'Delete User'
@@ -150,7 +145,7 @@ zabbix_export:
           history: 45d
           trends: '0'
           value_type: LOG
-          description: 'Обліковий запис користувача видалено'
+          description: 'Удаление учетной записи пользователя'
           tags:
             -
               tag: Application
@@ -161,7 +156,7 @@ zabbix_export:
               expression: 'logeventid(/Event User Log/eventlog[Security,,,,4726,,],,"4726")=1 and nodata(/Event User Log/eventlog[Security,,,,4726,,],5s)=0'
               name: 'Delete User'
               priority: INFO
-              description: 'Обліковий запис користувача видалено'
+              description: 'Удаление учетной записи пользователя'
         -
           uuid: a35ab2b319074b9999a07a0ce747faee
           name: 'Changed domain policy'
@@ -170,7 +165,7 @@ zabbix_export:
           delay: '300'
           trends: '0'
           value_type: LOG
-          description: 'Змінена політика домену'
+          description: 'Изменена политика домена'
           tags:
             -
               tag: Application
@@ -181,7 +176,7 @@ zabbix_export:
               expression: 'logeventid(/Event User Log/eventlog[Security,,,,4739,,],,"4739")=1 and nodata(/Event User Log/eventlog[Security,,,,4739,,],5s)=0'
               name: 'Changed domain policy'
               priority: AVERAGE
-              description: 'Змінена політика домену'
+              description: 'Изменена политика домена'
         -
           uuid: b28e61a2781a471e94e92ca0ecd56406
           name: 'Unlocked User'
@@ -191,7 +186,7 @@ zabbix_export:
           history: 45d
           trends: '0'
           value_type: LOG
-          description: 'Обліковий запис користувача розблоковано'
+          description: 'Разблокировка учетной записи пользователя'
           tags:
             -
               tag: Application
@@ -202,4 +197,4 @@ zabbix_export:
               expression: 'logeventid(/Event User Log/eventlog[Security,,,,4767,,],,"4767")=1 and nodata(/Event User Log/eventlog[Security,,,,4767,,],5s)=0'
               name: 'Unlocked User'
               priority: INFO
-              description: 'Обліковий запис користувача розблоковано'
+              description: 'Разблокировка учетной записи пользователя'
